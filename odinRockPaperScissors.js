@@ -5,12 +5,17 @@ let humanScore = 0;
 // Play the game x number of rounds
 playGame(5)
 
+
 function playGame(rounds) {
+    // initialize round counter variable
     let counter = 0;
+    // play rounds until counter === rounds
     while (counter < rounds) {
         playRound();
         rounds -= 1;
     }
+
+    // Decide winner of the game
     if (comScore > humanScore) {
         console.log(`Computer wins: ${comScore} to ${humanScore}`);
     } else if (humanScore > comScore) {
@@ -39,12 +44,13 @@ function getHumanChoice () {
     return humanChoice.toLowerCase();
 }
 
-// Decide winner
 function playRound() {
     let comChoice = getComputerChoice();
     let humanChoice = getHumanChoice();
     console.log('com: ' + comChoice);
     console.log('player: ' + humanChoice);
+
+    // Decide winner of the round
     if (comChoice === 'rock') {
         switch (humanChoice) {
             case 'rock':
