@@ -79,7 +79,8 @@ button {
     border: solid .2rem black;
     border-radius: .75rem;
     width: 30%;
-    height: 10rem;
+    min-width: 12rem;
+    min-height: 10rem;
     background-color: #ffde32;
     font-size: 3rem;
 }
