@@ -48,18 +48,17 @@ h4 {
 }
 
 button {
-    width: 16rem;
-    height: 3rem;
     font-family: "Roboto";
     font-weight: 800;
     font-size: 1.2rem;
     border: solid black .2rem;
     border-radius: .75rem;
+    min-height: 4rem;
 }
 
 .spacer {
     box-sizing: border;
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .main-frame {
@@ -75,17 +74,20 @@ button {
 
 .score-board {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 2rem;
+    /* max-width: 45%; */
 }
 
 .score-card {
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
+    justify-content: space-between;
+    flex: 0 1 40%;
     align-items: center;
     border: solid .2rem black;
     border-radius: .75rem;
-    width: 30%;
     min-width: 12rem;
     min-height: 10rem;
     background-color: #ffde32;
@@ -101,6 +103,14 @@ button {
     gap: 1rem;
     font-size: 2rem;
 
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    width: 20rem;
 }
 
 .result-message {
@@ -120,3 +130,101 @@ button {
 #human-score-card {
     color: #4B83FF;
 }
+
+/* Tablet styling */
+@media (max-width: 1138px) {
+    body {
+        background-image: url('');
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin: 2rem 0;
+
+    }
+
+    h2 {
+        font-size: 3.5rem;
+    }
+
+    h4 {
+        font-size: 2.25rem;
+        /* margin: 0; */
+    }
+
+    .spacer {
+        padding: 1.25rem;
+    }
+
+    .main-frame {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .score-board {
+        gap: 1rem;
+    }
+
+    .score-card {
+        flex: 1;
+        min-width: 0;
+        min-height: 0;
+
+    }
+
+}
+
+
+/* Arbitrary size, because it looks weird if I don't */
+@media (max-width: 936px) {
+    h1 {
+        font-size: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    h2 {
+        font-size: 2.75rem;
+    }
+
+    h4 {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile styling */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+        /* margin: 0; */
+    }
+
+    .main-frame {
+        width: 90%;
+        padding: 1rem;
+    }
+    .score-card {
+        width: 45%;
+
+        min-width: 0;
+        min-height: 0;
+
+    }
+
+    .game-gui {
+        font-size: 1.25rem;
+    }
+
+    .spacer {
+        padding: 1rem;
+    }
+}
+
