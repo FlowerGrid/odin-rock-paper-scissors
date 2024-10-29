@@ -3,6 +3,13 @@ html {
 }
 
 body {
+    /* background image */
+    background-image: url('imgs/rps-background-img.png'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed as you scroll */
+    background-repeat: no-repeat; /* Prevents tiling */
+    /* normal styling */
     font-family: roboto;
     display: flex;
     flex-direction: column;
