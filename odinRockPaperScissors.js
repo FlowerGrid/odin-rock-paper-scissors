@@ -1,29 +1,11 @@
 // Global variables: initialize scores
+const comScoreElement = document.querySelector('#com-score')
+const humanScoreElement = document.querySelector('#human-score')
+const gameGui = document.querySelector('.game-gui')
 let comScore = 0;
 let humanScore = 0;
-
-// Play the game x number of rounds
-playGame(5)
-
-
-function playGame(rounds) {
-    // initialize round counter variable
-    let counter = 0;
-    // play rounds until counter === rounds
-    while (counter < rounds) {
-        playRound();
-        rounds -= 1;
-    }
-
-    // Decide winner of the game
-    if (comScore > humanScore) {
-        console.log(`Computer wins: ${comScore} to ${humanScore}`);
-    } else if (humanScore > comScore) {
-        console.log(`Human wins: ${humanScore} to ${comScore}`);
-    } else {
-        console.log(`Tie: ${humanScore} to ${comScore}`);
-    }
-}
+let matchResult;
+let hiScore = Math.max(humanScore, comScore);
 
 function getComputerChoice() {
     let randNum = Math.floor(Math.random() * 100);
@@ -36,62 +18,72 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice () {
-    let humanChoice = '';
-    while (humanChoice.toLowerCase() != 'rock' && humanChoice.toLowerCase() != 'paper' && humanChoice.toLowerCase() != 'scissors') {
-        humanChoice = prompt('Please Choose: "Rock", "Paper", or "Scissors"');  
-    }
-    return humanChoice.toLowerCase();
-}
+
+
+// function getHumanChoice () {
+//     let humanChoice = '';
+//     while (
+//         humanChoice.toLowerCase() != 'rock' &&
+//         humanChoice.toLowerCase() != 'paper' &&
+//         humanChoice.toLowerCase() != 'scissors'
+//     ) {
+//         humanChoice = prompt('Please Choose: "Rock", "Paper", or "Scissors"');  
+//     }
+//     return humanChoice.toLowerCase();
+// }
 
 function playRound() {
     let comChoice = getComputerChoice();
     let humanChoice = getHumanChoice();
+    let matchResult;
     console.log('com: ' + comChoice);
     console.log('player: ' + humanChoice);
 
     // Decide winner of the round
     if (comChoice === 'rock') {
         switch (humanChoice) {
+            case 'paper':
+                matchResult = 'human';
+                break;
             case 'rock':
-                console.log('Tie');
+                matchResult = 'tie';
                 break;
             case 'scissors':
-                comScore += 1;
-                console.log('Computer Wins 😞');
-                break;
-            case 'paper':
-                humanScore += 1;
-                console.log('Human Wins! 🤠');
+                matchResult = 'com';
                 break;
         }
     } else if (comChoice === 'paper') {
         switch (humanChoice) {
+            case 'paper':
+                matchResult = 'tie';
+                break;
             case 'rock':
-                comScore += 1;
-                console.log('Computer Wins');
+                matchResult = 'com';
                 break;
             case 'scissors':
-                humanScore += 1;
-                console.log('Human Wins! 🤠');
-                break;
-            case 'paper':
-                console.log('Tie');
+                matchResult = 'human';
                 break;
         }
     } else if (comChoice === 'scissors') {
         switch (humanChoice) {
+            case 'paper':
+                matchResult = 'com';
+                break;
             case 'rock':
-                humanScore += 1;
-                console.log('Human Wins! 🤠');
+                matchResult = 'human';
                 break;
             case 'scissors':
-                console.log('Tie');
-                break;
-            case 'paper':
-                comScore += 1;
-                console.log('Computer Wins');
+                matchResult = 'tie';
                 break;
         }
+    }
+
+    switch (matchResult) {
+        case 'human':
+            humanScore += 1;
+            break;
+        case 'com':
+            comScore += 1;
+            break;
     }
 }

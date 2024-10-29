@@ -4,9 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>odin-rock-paper-scissors</title>
-    <script src="odinRockPaperScissors.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <script src="odinRockPaperScissors.js"></script> -->
+    <!-- Fonts -->
+      <!-- Erica One -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Erica+One&display=swap" rel="stylesheet">
+      <!-- Roboto -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Erica+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
 </head>
 <body>
+  <div class="main-frame">
+    <h1>Rock, Paper, Scissors</h1>
+    <div class="score-board">
+        <div class="score-card" id="human-score-card">
+          <h4 class="score-text">Human score:</h4>
+          <span id="human-score">0</span>
+        </div>
+        <div class="score-card" id="com-score-card">
+          <h4 class="score-text"> Computer score:</h4>
+          <span id="com-score">0</span>
+        </div>
+    </div>
+    <div class="spacer"></div>
+    <div class="game-gui">
+      <h2 class="game-prompt"> Choose your weapon!</h2>
+      <button class="rps-btn" data-value="rock">Rock</button>
+      <button class="rps-btn" data-value="paper">Paper</button>
+      <button class="rps-btn" data-value="scissors">Scissors</button>
+      <div class="match-result">
+        <span id="win-choice" class="result-message">Rock </span>beats 
+        <span id="lose-choice" class="result-message">Scissors</span>, 
+        <span id="winner" class="result-message">Human </span>wins!
+      </div>
+    </div>
+
+  </div>
 
 </body>
 </html>
