@@ -130,7 +130,6 @@ function displayWinner () {
     resultElement.classList.add('match-result')
     gameGui.appendChild(resultElement);
 
-
     const winnerElement = document.createElement('span');
     winnerElement.classList.add('result-message');
     const winScoreElement = document.createElement('span');
@@ -159,11 +158,22 @@ function displayWinner () {
     resultElement.append(' to ');
     resultElement.appendChild(loseScoreElement);
 
+    let spacerElement = document.createElement('div');
+    spacerElement.classList.add('spacer');
+    resultElement.appendChild(spacerElement);
+
+    let buttonsContainer = document.createElement('div');
+    buttonsContainer.classList.add('buttons');
+    resultElement.appendChild(buttonsContainer);
+
     let playAgainButton = document.createElement('button');
     playAgainButton.textContent = 'Play Again?';
-    gameGui.appendChild(playAgainButton);
+    buttonsContainer.appendChild(playAgainButton);
     playAgainButton.addEventListener('click', () =>{
         location.reload();
+
+
+
     });
 }
 
