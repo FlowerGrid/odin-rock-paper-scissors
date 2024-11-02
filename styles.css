@@ -185,24 +185,6 @@ button {
 
 }
 
-
-/* Arbitrary size, because it looks weird if I don't */
-@media (max-width: 936px) {
-    /* h1 {
-        font-size: 3rem;
-        margin-top: 3rem;
-        margin-bottom: 3rem;
-    } */
-
-    /* h2 {
-        font-size: 2.75rem;
-    } */
-/* 
-    h4 {
-        font-size: 2rem;
-    } */
-}
-
 /* Mobile styling */
 @media (max-width: 600px) {
     h1 {
